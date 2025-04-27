@@ -10,10 +10,22 @@
 
 </head>
 <script>
- 
+  const corpId = 'ww293c1aa6f6a117a0'
+  const agentId = 1000002 // change to your agent id
+  const redirectUri = encodeURIComponent(location.origin)
+  const urlParams = new URLSearchParams(location.search)
+  const code = urlParams.get('code')
+  if(code){
+    alert('code'+code)
+  }else{
+      const baseUrl = `https://open.weixin.qq.com/connect/oauth2/authorize`
+      const url = `${baseUrl}?appid=${corpId}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_base#wechat_redirect`
+      window.location.href = url
+  }
+
 </script>
 <body>
- demo1111
+ demo list
 </body>
 
 </html>
