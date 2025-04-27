@@ -7,13 +7,22 @@
   <title>小睿助理</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" type="text/css" href="bonree-design-antd.min.css">
-  <script src="/react@17.0.2.js"></script>
-  <script src="/react-dom@17.0.2.js"></script>
-  <script src="/wecom-jssdk-2.0.2.js"></script>
-</head>
 
+</head>
+<script>
+   const corpId = 'ww293c1aa6f6a117a0'
+  const agentId = 1000002 // change to your agent id
+   const redirectUri = encodeURIComponent(location.origin)
+    const urlParams = new URLSearchParams(location.search)
+   const code = urlParams.get('code')
+   console.log(code,'code')
+  
+    const baseUrl = `https://open.weixin.qq.com/connect/oauth2/authorize`
+    const url = `${baseUrl}?appid=${corpId}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_base#wechat_redirect`
+    window.location.href = url
+</script>
 <body>
-  demo11
+ demo1111
 </body>
 
 </html>
